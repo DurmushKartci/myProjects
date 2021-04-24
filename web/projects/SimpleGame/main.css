@@ -1,0 +1,211 @@
+body{
+    background: linear-gradient( to top right , #3f0091, #f82222);
+    
+}
+
+#id_svg{
+    
+    text-align: center;
+    color: #881010;
+    font-size: 15px;
+    margin-left: 325px;
+    margin-top: 10px;
+    background-color:white;
+    border-radius: 2rem;
+    padding: 50px;
+
+    display: inline-block;
+    
+    padding: 6px 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 30%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+
+    width: 480px;
+    height: 480px;
+    border-color: none;
+    border-radius: 2rem;
+    padding: 2rem;
+    
+}
+
+#id_svg p{
+    font-weight: bolder;
+}
+
+
+
+
+
+.control-buttons{
+    display: inline-block;
+    width: 400px;
+    padding: 6px 12px;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    margin-left: 36%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+
+    color: white;
+    background-color: none;
+    border-color: none;
+}
+
+button{
+    color: white;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 2rem;
+    background-color: #881010;
+    transition: ease-in-out all 250ms ;
+}
+
+.level-buttons{
+    font-size: 8px; 
+    display: inline-block;
+    width: 400px;
+    padding: 6px 12px;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    margin-left: 36%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+
+    color: white;
+    background-color: none;
+    border-color: none;
+}
+
+.menu-buttons{
+    font-size: 20px; 
+    display: inline-block;
+    width: 400px;
+    padding: 6px 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 36%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+
+    color: white;
+    background-color: none;
+    border-color: none;
+}
+
+
+
+.level-buttons button:hover{
+    color: white;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 8px;
+    border-radius:15px;
+    background-color: #cc1818;
+    transition: ease-in-out all 250ms ;
+}
+
+.control-buttons button:hover {
+    color: white;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 5px;
+    border-radius:10px;
+    background-color: #cc1818;
+    transition: ease-in-out all 250ms ;
+}
+
+.menu-buttons button:hover{
+    color: white;
+    font-size: 30px;
+    margin-top: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+    border-radius:10px;
+    background-color: #cc1818;
+    transition: ease-in-out all 250ms ;
+}
+
+.menu-buttons button{
+    color: white;
+    font-size: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 1.5rem;
+    background-color: #881010;
+    transition: ease-in-out all 500ms ;
+}
+
+
+
