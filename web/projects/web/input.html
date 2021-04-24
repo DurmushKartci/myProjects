@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getiri ve Tüketime Etkisi</title>
+
+    <!-- ========== COMMON STYLES ========== -->
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.min.css" media="screen">
+    <link rel="stylesheet" href="css/animate-css/animate.min.css" media="screen">
+    <link rel="stylesheet" href="css/lobipanel/lobipanel.min.css" media="screen">
+
+    <script src="https://kit.fontawesome.com/f70679fb39.js" crossorigin="anonymous"></script>
+
+    <!-- ========== PAGE STYLES ========== -->
+    <link rel="stylesheet" href="css/prism/prism.css" media="screen">
+    <!-- USED FOR DEMO HELP - YOU CAN REMOVE IT -->
+
+    <!-- ========== THEME CSS ========== -->
+    <link rel="stylesheet" href="css/main.css" media="screen">
+
+    <!-- ========== MODERNIZR ========== -->
+    <script src="js/modernizr/modernizr.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body class="top-navbar-fixed" onload="load()">
+
+    <div class="main-wrapper">
+
+        <!-- ========== TOP NAVBAR ========== -->
+        <nav class="navbar top-navbar bg-white box-shadow">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="navbar-header no-padding">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/images/login_logo_amean.png" alt="Options - Admin Template" class="logo">
+                        </a>
+                    </div>
+
+                    <!-- /.navbar-header -->
+
+                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle bg-primary" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus-circle"></i> Gelişmiş Ayarlar <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="width:300%;">
+                                    <div id="application">
+                                        <div class="col-md-6" style="width:100%;">
+                                            <div class="panel">
+                                                <div class="panel-body">
+
+                                                    <form class="col-md-10 col-md-offset-1">
+                                                        <div class="form-group">
+                                                            <label for="name4">2019 Türkiye Toplamı (kWh)</label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                                <input type="number" min="0" class="form-control" value="290000000000" id="turkiyeToplami">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="name4">100 km'de tuketilen ortalama benzin (lt)</label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                                <input type="number" min="0" class="form-control" value="8" id="tuketilenOrtalamBenzin">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="name4">100km'de tuketilen ortalama elektrik (kWh)</label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                                <input type="number" min="0" class="form-control" value="14" id="tuketilenOrtalamElektrik">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="name4">1 litre benzin fiyati (TL)</label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                                <input type="number" min="0" class="form-control" value="6" id="benzinFiyatı">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="name4">1 litre benzinin yuzde kaci vergi (%)</label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                                <input type="number" min="0" class="form-control" value="70" id="vergi">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="name4">1 litre benzinin kac tl'si vergi (TL)</label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                                <input type="number" min="0" class="form-control" value="4.2" id="benzininVergisi">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                </ul>
+                            </li>
+                            <!-- /.dropdown -->
+                            <!-- <li><a href="#" class=""><i class="fa fa-bell"></i></a></li>
+                            <li><a href="#" class=""><i class="fa fa-comments"></i></a></li> -->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Durmuş KARTCI <span class="caret"></span></a>
+                                <ul class="dropdown-menu profile-dropdown">
+                                    <li class="profile-menu bg-gray">
+                                        <div class="">
+                                            <img src="./assets/images/login_logo_amean 2.png" alt="Durmuş KARTCI" class="img-circle profile-img">
+                                            <div class="profile-name">
+                                                <h6>Durmuş KARTCI </h6>
+                                                <a href="#">Profili Görüntüle</a>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-cog"></i> Ayarlar</a></li>
+                                    <li><a href="#"><i class="fa fa-sliders"></i> Hesap Detayları</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#" class="color-danger text-center"><i class="fa fa-sign-out"></i> Çıkış</a></li>
+                                </ul>
+                            </li>
+                            <!-- /.dropdown -->
+                            <li><a href="#" class="hidden-xs hidden-sm open-right-sidebar"><i class="fa fa-ellipsis-v"></i></a></li>
+                        </ul>
+                        <!-- /.nav navbar-nav navbar-right -->
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+
+
+        </nav>
+
+        <!-- ========== WRAPPER FOR BOTH SIDEBARS & MAIN CONTENT ========== -->
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="main-page">
+                    <div class="container-fluid">
+
+                        <br><br>
+
+                        <div class="col-md-13 col-md">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <h5>Yıllara Göre Elektrikli Araç Sayısı ve Şarj Cihazı Öngörüsü</h5>
+                                    </div>
+                                </div>
+                                <div class="panel-body p-10">
+
+                                    <table class="table table-hover table-bordered">
+                                        <caption></caption>
+                                        <thead>
+                                            <tr>
+                                                <th class="baslik"></th>
+                                                <th class="baslik">Kat Sayısı</th>
+                                                <th class="baslik">2021</th>
+                                                <th class="baslik">2022</th>
+                                                <th class="baslik">2023</th>
+                                                <th class="baslik">2024</th>
+                                                <th class="baslik">2025</th>
+                                                <th class="baslik">2026</th>
+                                                <th class="baslik">2027</th>
+                                                <th class="baslik">2028</th>
+                                                <th class="baslik">2029</th>
+                                                <th class="baslik">2030</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th class="baslik" scope="row">Elektrikli Araç Sayısı</th>
+                                                <td></td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="13000" id="i2021">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="45000" id="i2022">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="115000" id="i2023">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="200000" id="i2024">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="320000" id="i2025">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="510000" id="i2026">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="700000" id="i2027">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="900000" id="i2028">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="1200000" id="i2029">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="1600000" id="i2030">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="baslik" scope="row" class="tabloSolBaslik">L1 Şarj Soketi (AC) 3,7kW > </th>
+
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="66" id="l1ks">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l12021"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l12022"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l12023"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l12024"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l12025"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l12026"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l12027"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l12028"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l12029"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l12030"></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="baslik" scope="row" class="tabloSolBaslik">L2 Şarj Soketi (AC) 3,7kW-43kW</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="20" id="l2ks">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l22021"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l22022"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l22023"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l22024"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l22025"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l22026"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l22027"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l22028"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l22029"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l22030"></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="baslik" scope="row" class="tabloSolBaslik">L3 Şarj Soketi (DC) 50kW ve üzeri</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="4" id="l3ks">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l32021"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l32022"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l32023"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l32024"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l32025"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l32026"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l32027"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l32028"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l32029"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="l32030"></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-md-6 -->
+
+                        <div class="col-md-15 col-md">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="panel-title baslik1">
+                                        <h5>Haftalık Şarj Sayısına Göre Veriler</h5>
+                                        <div class="input-group input1">
+                                            <input type="number" min="0" class="form-control" value="2" id="haftalikSarjSayisi">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body p-10">
+
+                                    <table class="table table-hover table-bordered">
+                                        <caption></caption>
+                                        <thead>
+                                            <tr>
+                                                <th class="baslik">Haftalık Şarj Sayısı</th>
+
+                                                <th class="baslik">2021</th>
+                                                <th class="baslik">2022</th>
+                                                <th class="baslik">2023</th>
+                                                <th class="baslik">2024</th>
+                                                <th class="baslik">2025</th>
+                                                <th class="baslik">2026</th>
+                                                <th class="baslik">2027</th>
+                                                <th class="baslik">2028</th>
+                                                <th class="baslik">2029</th>
+                                                <th class="baslik">2030</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th class="baslik" scope="row">Araç Başı Ortalama Batarya</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="40" id="ortalamaBatarya2021">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="60" id="ortalamaBatarya2022">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="60" id="ortalamaBatarya2023">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="60" id="ortalamaBatarya2024">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="60" id="ortalamaBatarya2025">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="80" id="ortalamaBatarya2026">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="80" id="ortalamaBatarya2027">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="80" id="ortalamaBatarya2028">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="80" id="ortalamaBatarya2029">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input type="number" min="0" class="form-control" value="80" id="ortalamaBatarya2030">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="baslik" scope="row" class="tabloSolBaslik">Haftalık Tüketilen Enerji (kWh)</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="haftalikTuketilenEnerji2021"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="haftalikTuketilenEnerji2022"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="haftalikTuketilenEnerji2023"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="haftalikTuketilenEnerji2024"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="haftalikTuketilenEnerji2025"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="haftalikTuketilenEnerji2026"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="haftalikTuketilenEnerji2027"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="haftalikTuketilenEnerji2028"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="haftalikTuketilenEnerji2029"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="haftalikTuketilenEnerji2030"></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="baslik" scope="row" class="tabloSolBaslik">Yıllık Tüketilen Enerji (MWh)</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikTuketilenEnerji2021"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikTuketilenEnerji2022"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikTuketilenEnerji2023"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikTuketilenEnerji2024"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikTuketilenEnerji2025"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikTuketilenEnerji2026"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikTuketilenEnerji2027"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikTuketilenEnerji2028"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikTuketilenEnerji2029"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikTuketilenEnerji2030"></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="baslik" scope="row" class="tabloSolBaslik">Yıllık Dağıtım Bedeli (TL/MWh) - 200TL</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikDagitimBedeli2021"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikDagitimBedeli2022"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikDagitimBedeli2023"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikDagitimBedeli2024"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikDagitimBedeli2025"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikDagitimBedeli2026"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikDagitimBedeli2027"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikDagitimBedeli2028"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikDagitimBedeli2029"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="yillikDagitimBedeli2030"></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="baslik" scope="row" class="tabloSolBaslik">Toplam Tüketime Etkisi</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="toplamTuketimeEtkisi2021"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="toplamTuketimeEtkisi2022"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="toplamTuketimeEtkisi2023"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="toplamTuketimeEtkisi2024"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="toplamTuketimeEtkisi2025"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="toplamTuketimeEtkisi2026"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="toplamTuketimeEtkisi2027"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="toplamTuketimeEtkisi2028"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="toplamTuketimeEtkisi2029"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="toplamTuketimeEtkisi2030"></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="warning">
+                                                <th scope="row" class="tabloSolBaslik ">Benzin Eşleniği</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="benzinEslenigi2021"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="benzinEslenigi2022"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="benzinEslenigi2023"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="benzinEslenigi2024"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="benzinEslenigi2025"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="benzinEslenigi2026"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="benzinEslenigi2027"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="benzinEslenigi2028"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="benzinEslenigi2029"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="benzinEslenigi2030"></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="warning">
+                                                <th scope="row" class="tabloSolBaslik">Vergi Eşleniği</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="vergiEslenigi2021"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="vergiEslenigi2022"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="vergiEslenigi2023"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="vergiEslenigi2024"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="vergiEslenigi2025"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="vergiEslenigi2026"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="vergiEslenigi2027"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="vergiEslenigi2028"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="vergiEslenigi2029"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="vergiEslenigi2030"></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="warning">
+                                                <th scope="row" class="tabloSolBaslik">Telafi Edecek kWh Vergisi</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="telafiVergisi2021"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="telafiVergisi2022"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="telafiVergisi2023"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="telafiVergisi2024"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="telafiVergisi2025"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="telafiVergisi2026"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="telafiVergisi2027"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="telafiVergisi2028"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="telafiVergisi2029"></p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <p id="telafiVergisi2030"></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+
+
+                                        </tbody>
+                                    </table>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-5 col-sm-10">
+                                            <input type="button" class="" id="addToCharts" value="Grafiklere Ekle">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="chartDiv ">
+                                        <h4 style="text-align: center;">Türkiye Elektrikli Araç ve Şarj Cihazı Öngörüsü</h4>
+                                        <canvas id="ElektrikliAracSayisiChart" width="400px" height="400px" style="width: 50%;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="chartDiv ">
+                                        <h4 style="text-align: center;">Yıllık Tüketilen Enerji (MWh)</h4>
+                                        <canvas id="yilllikTuketilenEnerjiGrafik" width="400px" height="400px" style="width: 50%;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="chartDiv ">
+                                        <h4 style="text-align: center;">Yıllık Dağıtım Bedeli (TL/MWh) - 200TL</h4>
+                                        <canvas id="yillikDagitimBedeliGrafik" width="400px" height="400px" style="width: 50%;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="chartDiv ">
+                                        <h4 style="text-align: center;">Toplam Tüketime Etkisi</h4>
+                                        <canvas id="toplamTuketimeEtkisiGrafik" width="400px" height="400px" style="width: 50%;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+        <!-- /.sidebar-content -->
+        </div>
+        <!-- /.right-sidebar -->
+
+    </div>
+    <!-- /.content-container -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /.main-wrapper -->
+
+    <!-- ========== COMMON JS FILES ========== -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/pace/pace.min.js"></script>
+    <script src="js/lobipanel/lobipanel.min.js"></script>
+    <script src="js/iscroll/iscroll.js"></script>
+
+    <!-- ========== PAGE JS FILES ========== -->
+    <script src="js/prism/prism.js"></script>
+
+    <!-- ========== THEME JS ========== -->
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        $(function($) {
+
+        });
+    </script>
+
+    <!-- ========== ADD custom.js FILE BELOW WITH YOUR CHANGES ========== -->
+    <!--===============================================================================================-->
+    <!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    ===============================================================================================
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    ===============================================================================================
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script> -->
+    <script>
+        $('.js-pscroll').each(function() {
+            var ps = new PerfectScrollbar(this);
+
+            $(window).on('resize', function() {
+                ps.update();
+            })
+
+            $(this).on('ps-x-reach-start', function() {
+                $(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
+            });
+
+            $(this).on('ps-scroll-x', function() {
+                $(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
+            });
+
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <script src="js/project.js"></script>
+
+</body>
+
+</html>
