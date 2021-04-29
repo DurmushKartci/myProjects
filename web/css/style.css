@@ -215,9 +215,9 @@ h6 {
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
     background-color: #fff;
-    -webkit-animation: lineheight 150ms ease-in-out 50s forwards;
-    -o-animation: lineheight 150ms ease-in-out 50s forwards;
-    animation: lineheight 150ms ease-in-out 50s forwards;
+    -webkit-animation: lineheight 1000ms ease-in-out 0s forwards;
+    -o-animation: lineheight 1000ms ease-in-out 0s forwards;
+    animation: lineheight 1000ms ease-in-out 0s forwards;
 }
 
 .loader_line:after {
@@ -232,10 +232,10 @@ h6 {
     -ms-transform: translateY(-100%);
     -o-transform: translateY(-100%);
     transform: translateY(-100%);
-    -webkit-animation: lineround 500ms linear 0s infinite;
-    -o-animation: lineround 500ms linear 0s infinite;
-    animation: lineround 500ms linear 100s infinite;
-    animation-delay: 20ms;
+    -webkit-animation: lineround 1200ms linear 0s infinite;
+    -o-animation: lineround 1200ms linear 0s infinite;
+    animation: lineround 1200ms linear 0s infinite;
+    animation-delay: 2000ms;
 }
 
 @keyframes lineheight {
@@ -276,9 +276,9 @@ h6 {
 
 .preloaded:before,
 .preloaded:after {
-    -webkit-animation: preloadedzero 150ms ease-in-out 50ms forwards;
-    -o-animation: preloadedzero 150ms ease-in-out 50ms forwards;
-    animation: preloadedzero 150ms ease-in-out 50ms forwards;
+    -webkit-animation: preloadedzero 300ms ease-in-out 500ms forwards;
+    -o-animation: preloadedzero 300ms ease-in-out 500ms forwards;
+    animation: preloadedzero 300ms ease-in-out 500ms forwards;
 }
 
 @keyframes preloadedzero {
@@ -702,11 +702,11 @@ h6 {
 body.loaded .overlay_effect:before {
     z-index: 2;
     background-color: #000;
-    animation: anim 1s cubic-bezier(0.77, 0, 0.175, 1) both;
+    animation: anim 2s cubic-bezier(0.77, 0, 0.175, 1) both;
 }
 
 body.loaded .overlay_effect:after {
-    animation: anim2 1s cubic-bezier(0.77, 0, 0.175, 1) both;
+    animation: anim2 2s cubic-bezier(0.77, 0, 0.175, 1) both;
 }
 
 @keyframes anim {
@@ -786,9 +786,9 @@ body.loaded .overlay_effect:after {
     height: 50%;
     display: block;
     top: 0;
-    -webkit-animation: scroll-down 1s ease-in-out infinite;
-    -ms-animation: scroll-down 1s ease-in-out infinite;
-    animation: scroll-down 1s ease-in-out infinite;
+    -webkit-animation: scroll-down 2s ease-in-out infinite;
+    -ms-animation: scroll-down 2s ease-in-out infinite;
+    animation: scroll-down 2s ease-in-out infinite;
     ;
 }
 
@@ -1193,11 +1193,11 @@ body.loaded .overlay_effect:after {
 }
 
 .progress_inner .background .bar.open {
-    -webkit-animation: wow 0.8s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -webkit-animation: wow 1.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
     /* Safari 4+ */
-    -moz-animation: wow 0.8s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -moz-animation: wow 1.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
     /* Fx 5+ */
-    animation: wow 0.8s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    animation: wow 1.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
     /* IE 10+ */
     width: 100%;
 }
@@ -2601,4 +2601,59 @@ body.modal {
         padding: 0px;
         width: 100%;
     }
+}
+
+.specialList a,
+.specialList a:before {
+    transition: all .4s;
+}
+
+.specialList {
+    max-width: 500px;
+    margin: 2em auto;
+}
+
+.specialList:hover a {
+    opacity: .4;
+}
+
+.specialList a {
+    position: relative;
+    display: block;
+    max-width: 500px;
+    padding: 20px 20px 20px 45px;
+    box-sizing: border-box;
+    color: #777;
+    background: #fAfAfA;
+    text-decoration: none;
+    font-family: "Open Sans", "Segoe UI", Arial, sans-serif;
+}
+
+.specialList a:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 20px;
+    background: #7F8C9A;
+}
+
+.specialList a:nth-child(even):before {
+    background: #34495E;
+}
+
+.specialList a+.specialList a {
+    border-top: 2px solid #ededed;
+}
+
+.specialList a:hover,
+.specialList a:focus {
+    opacity: 1;
+    padding-left: 55px;
+}
+
+.specialList a:hover:before,
+.specialList a:focus:before {
+    width: 30px;
 }
